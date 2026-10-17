@@ -4,11 +4,22 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.6] - 2026-10-17
+
+### Added
+
+- **Settings → Updates → Check for updates** asks GitHub for the newest release and tells you whether a newer version exists, with a link to its download page. It sends one request, only when you press the button, and nothing about you or your library.
+
+### Changed
+
+- To get Pro, choose **$5 for a 1-year license** or **$10 for a lifetime license** on Ko-fi at ko-fi.com/doggbyte. In the Ko-fi note, write which license you want and the email address to send the key to. Your key is sent within 24 hours, and Pro includes support and free updates for the length of the license you choose.
+- The notices that say a feature needs Pro now have a link to the Ko-fi page, and Settings → Bookmark Bastion Pro explains how to get a key, right under the key box, including how to upgrade a 1-year license to lifetime.
+
 ## [1.43.5] - 2026-10-17
 
 ### Added
 
-- Getting Pro is now simple: **$10 for one year** or **$15 for a lifetime license**, bought on Ko-fi at ko-fi.com/doggbyte. Settings → Bookmark Bastion Pro shows the prices and has a link to the Ko-fi page.
+- Getting Pro is now simple: **$5 for a 1-year license** or **$10 for a lifetime license**, bought on Ko-fi at ko-fi.com/doggbyte. Settings → Bookmark Bastion Pro shows the prices and has a link to the Ko-fi page.
 
 ## [1.43.4] - 2026-10-17
 

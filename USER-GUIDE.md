@@ -108,7 +108,7 @@ Keep the folder where it is: the browser reads the extension from it every time 
 
 ### Updating
 
-Replace the files with the new version, then press the **reload** icon on the extension's card on your browser's extensions page. Your data is stored in the browser profile, so it is kept, and it is upgraded automatically when the storage format changes.
+To find out whether a newer version exists, press **Settings → Updates → Check for updates**: it asks GitHub for the newest release (one request, only when you press the button; nothing about you or your library is sent) and links to its download page. You can also open the [releases page](https://github.com/DoggByte/bookmark-bastion/releases/latest) yourself. Download the zip, replace the files with it, then press the **reload** icon on the extension's card on your browser's extensions page. Your data is stored in the browser profile, so it is kept, and it is upgraded automatically when the storage format changes.
 
 <a id="install-move"></a>
 
@@ -927,6 +927,7 @@ Open **Settings** at the bottom of the manager's sidebar. Changes are saved as s
 | **Clear copied secrets from the clipboard** | After 30 seconds | Never, or after 30 seconds, 1 or 2 minutes. Not applied to a copied username. |
 | **Bookmark Bastion Pro** | Free version | Enter or remove a license key. See [Bookmark Bastion Pro](#pro). |
 | **Theme** | Match system | Light, dark or follow the system. |
+| **Updates** | | **Check for updates** asks GitHub whether a newer version exists. See [Updating](#install-update). |
 | **Library clean-up** | | **Manage tags…** See [Library clean-up](#cleanup). |
 | **Backup & transfer** | | **Export JSON**, **Import JSON…** and **Paste JSON…**. See [Backup, export and import](#backup). |
 | **Start fresh** | | **Erase everything…** deletes every bookmark, workspace, note, saved login and setting from this browser, after you confirm, and starts again as if the extension was just installed. It can’t be undone, so export a backup first. |
@@ -952,7 +953,8 @@ The extension is free to use. **Pro** is an optional license that unlocks more.
 
 Without a license nothing is ever hidden or deleted: logins, smartspaces and settings you already have stay readable, usable and exportable (the one exception is that browser sign-in prompts are not answered). A control that needs Pro carries a **PRO** badge, and clicking it always says so, with an **Add license key** button that opens (or jumps to) this part of Settings.
 
-- **Getting Pro.** Pro costs **$10 for one year** or **$15 for a lifetime license**, bought on Ko-fi at [ko-fi.com/doggbyte](https://ko-fi.com/doggbyte). You receive a license key (it starts with `BB1.`); if it does not arrive, write to doggbyte@bert2go.com. **Settings → Bookmark Bastion Pro** also has a link to the Ko-fi page.
+- **Getting Pro.** Go to [ko-fi.com/doggbyte](https://ko-fi.com/doggbyte) and choose **$5 for a 1-year license** or **$10 for a lifetime license**. **In the Ko-fi note, write which license you want (1-year or lifetime) and the email address to send the key to.** Your license key (it starts with `BB1.`) is sent to that address within 24 hours. Pro includes support and free updates for the length of the license you choose. The same link is in **Settings → Bookmark Bastion Pro**, under the key box, and in every notice that says a feature needs Pro.
+- **Upgrading from 1 year to lifetime.** Make another **$10** payment on Ko-fi and write in the note that it is an upgrade, together with the activation key of your 1-year license and the email address to send the new key to.
 - **Entering a key.** Open **Settings → Bookmark Bastion Pro**, paste the key (it starts with `BB1.`; spaces and line breaks from a copied key are ignored) and press **Activate** or Enter. The status line then says who the license is for and when it ends, if it ends.
 - **Checked on your computer.** The key carries a digital signature that the extension checks itself. Nothing is sent anywhere, no account is needed, and Pro works without a network connection. A key that was changed, cut short or made for something else is refused with a message and is not saved.
 - **A license with an end date** keeps working for 14 days after that date, so a renewal that is a little late costs nothing. After that the extension goes back to the free version; nothing you saved is deleted, and entering a renewed key turns Pro on again.
@@ -1133,7 +1135,7 @@ To change a shortcut, or if one does not work because another extension uses it,
 
 There is **no account, no analytics and no server**. Your bookmarks, notes and tags never leave your browser. Saved logins are encrypted on your device and never transmitted; they only leave the vault when *you* fill them into a matching page or choose to export them (still encrypted). Nothing is synced between devices.
 
-The only network traffic the extension creates is the optional description lookup: a `GET` request to a bookmarked site (no cookies are sent) to read the page's description, and only if you grant site access. Revoke the permission in **Settings → Site access** to stop even that.
+The only network traffic the extension creates is the optional description lookup: a `GET` request to a bookmarked site (no cookies are sent) to read the page's description, and only if you grant site access; and, only when you press **Check for updates** in Settings, one request to GitHub asking for the newest release. Revoke the permission in **Settings → Site access** to stop even that.
 
 <a id="permissions"></a>
 
