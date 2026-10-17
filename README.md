@@ -2,7 +2,7 @@
 
 **A workspace-based bookmark manager for Chromium browsers** (Chrome, Edge, Brave, Vivaldi, Opera and others). Keep every bookmark in one place and group them into as many workspaces as you like, without ever saving a page twice.
 
-- **Version:** 1.43.12 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.12) · [CHANGELOG](CHANGELOG.md)
+- **Version:** 1.43.14 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.14) · [CHANGELOG](CHANGELOG.md)
 - **Author:** DoggByte · [doggbyte.com](https://doggbyte.com) · [doggbyte@bert2go.com](mailto:doggbyte@bert2go.com)
 - **Works in:** any Chromium-based browser that runs Chrome extensions (version 110 or newer). Firefox and Safari are not supported.
 - **Privacy:** no account, no server, no tracking. Your library stays on your computer.
@@ -23,14 +23,14 @@
 - Keep saved logins (username, password, two-factor codes) encrypted with a passphrase only you know, and fill them in with one click.
 - Import your browser's bookmarks, export everything to a file, and move your library between computers.
 
-The full story is in the [user guide](USER-GUIDE.md).
+The full story is in the [user guide](USER-GUIDE.md), and the [tutorials](tutorials/README.md) walk through the basics with screenshots.
 
 ## Install it
 
 Bookmark Bastion is **not in a web store**, so you install it by hand. It takes about two minutes and works the same in every Chromium browser.
 
-1. **Download** [`bookmark-bastion-v1.43.12.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.43.12/bookmark-bastion-v1.43.12.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.12).
-   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.43.12.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.43.12.zip SHA256`. The two values must be identical.)*
+1. **Download** [`bookmark-bastion-v1.43.14.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.43.14/bookmark-bastion-v1.43.14.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.14).
+   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.43.14.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.43.14.zip SHA256`. The two values must be identical.)*
 2. **Unzip it into a folder that will stay where it is**, for example `Documents\Bookmark Bastion` or `~/Apps/bookmark-bastion`. The browser loads the extension from this folder every time it starts, so do not put it in Downloads or on the Desktop, and do not delete it afterwards. After unzipping, the folder must contain a file named `manifest.json` directly inside it, not inside another folder.
 3. **Open the extensions page** of your browser: type `chrome://extensions` in the address bar (`edge://extensions` in Edge, `brave://extensions` in Brave, `vivaldi://extensions` in Vivaldi, `opera://extensions` in Opera) and press Enter.
 4. **Turn on Developer mode.** The switch is at the top right (in Edge it is at the bottom left of the page, in Opera at the top right).
@@ -68,7 +68,7 @@ The zip above never updates itself: use **Settings → Updates → Check for upd
 
 | File | What it is |
 | --- | --- |
-| `bookmark-bastion-v1.43.12.crx` | the extension, packed and signed |
+| `bookmark-bastion-v1.43.14.crx` | the extension, packed and signed |
 | `updates.xml` | tells the browser which version is the newest and where its file is |
 | `bookmark-bastion-policy.json` | the browser setting that installs the packed copy and keeps it updated |
 
@@ -76,7 +76,7 @@ The zip above never updates itself: use **Settings → Updates → Check for upd
 
 **On Linux (Brave, Chrome, Chromium or Edge):**
 
-1. Download `bookmark-bastion-policy.json` from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.12).
+1. Download `bookmark-bastion-policy.json` from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.14).
 2. Copy it into the browser's managed-policy folder (this needs `sudo`; the file name is up to you):
    - Brave: `/etc/brave/policies/managed/`
    - Chrome: `/etc/opt/chrome/policies/managed/`
@@ -122,11 +122,18 @@ Bookmark Bastion is free to use. **Pro** is an optional license that unlocks mor
 
 Without a license **nothing is ever hidden or deleted**: logins, smartspaces and settings you already have stay readable, usable and exportable, and a control that needs Pro carries a **PRO** badge that explains what to do.
 
-**Getting Pro:** go to [ko-fi.com/doggbyte](https://ko-fi.com/doggbyte) and choose **$5 for a 1-year license** or **$10 for a lifetime license**. **In the Ko-fi note, write which license you want (1-year or lifetime) and the email address to send the key to.** Your license key (it starts with `BB1.`) is sent to that address within 24 hours, and Pro includes support and free updates for the length of the license you choose. Already have a 1-year license and want the lifetime one? Make another **$10** payment and write in the note that it is an upgrade, together with your 1-year activation key and the email address to send the new key to. Questions: [doggbyte@bert2go.com](mailto:doggbyte@bert2go.com). Open the manager, go to **Settings → Bookmark Bastion Pro**, paste the key and press **Activate**. The key is checked on your computer, with no account and no internet connection. See [Bookmark Bastion Pro](USER-GUIDE.md#pro) in the guide for details, including what happens when a key with an end date runs out.
+**Getting Pro:** go to [ko-fi.com/doggbyte](https://ko-fi.com/doggbyte) and choose **$5 for a 1-year license** or **$10 for a lifetime license**. **In the Ko-fi note, write which license you want (1-year or lifetime) and the email address to send the key to.** Your license key (it starts with `BB1.`) is sent to that address within 24 hours, and Pro includes support and free updates for the length of the license you choose. Already have a 1-year license and want the lifetime one? Make another **$5** payment: you only pay the difference, so the two payments add up to the $10 lifetime price. Write in the note that it is an upgrade, together with your 1-year activation key and the email address to send the new key to. Questions: [doggbyte@bert2go.com](mailto:doggbyte@bert2go.com). Open the manager, go to **Settings → Bookmark Bastion Pro**, paste the key and press **Activate**. The key is checked on your computer, with no account and no internet connection. The [activation tutorial](tutorials/activate-bookmark-bastion.md) shows each step with screenshots. See [Bookmark Bastion Pro](USER-GUIDE.md#pro) in the guide for details, including what happens when a key with an end date runs out.
 
 ## More
 
 - [User guide](USER-GUIDE.md): every feature, step by step
+- [Tutorials](tutorials/README.md): short guides with screenshots
+  - [How to export and import your bookmarks](tutorials/export-and-import.md)
+  - [Three ways to open the manager](tutorials/open-the-manager.md)
+  - [Bookmarks, workspaces and folders: how they fit together](tutorials/bookmarks-workspaces-folders.md)
+  - [How to change the icon of a folder](tutorials/change-a-folder-icon.md)
+  - [How to save a username and password on a bookmark and use it to sign in](tutorials/save-a-login-and-sign-in.md)
+  - [How to activate Bookmark Bastion Pro](tutorials/activate-bookmark-bastion.md)
 - [CHANGELOG](CHANGELOG.md): what changed in each version
 - [COPYRIGHT](COPYRIGHT.md): the terms of use
 - [Third-party licenses](THIRD-PARTY-LICENSES.md): the open source parts inside Bookmark Bastion

@@ -4,6 +4,26 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.14] - 2026-10-17
+
+### Added
+
+- New tutorials with screenshots show how to export and import your bookmarks (including the passphrase for saved logins), the three ways to open the manager (in a tab, or in its own window from the pop-up or from the sidebar) and how to save a username and password on a bookmark and use it to sign in to a website.
+
+## [1.43.13] - 2026-10-17
+
+### Fixed
+
+- Upgrading a 1-year license to the lifetime one now says what it should: you only pay the difference, another $5, so the two payments add up to the $10 lifetime price. It said another $10 before.
+
+### Added
+
+- Tutorials with screenshots, in the new `tutorials` folder of this page. One explains how bookmarks, workspaces and folders fit together, one shows how to change a folder's icon, and one shows step by step how to activate Bookmark Bastion Pro.
+
+### Changed
+
+- The logo in the manager's sidebar sits flush with the left edge and has a little more room before the title.
+
 ## [1.43.12] - 2026-10-17
 
 ### Fixed
