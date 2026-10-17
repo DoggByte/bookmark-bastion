@@ -4,6 +4,16 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.44.0] - 2026-10-17
+
+### Added
+
+- A theme button above your bookmarks, to the left of Add bookmark. Press it to switch between Match system (sun and moon), Light (sun) and Dark (moon); the picture shows the mode you are in. The choice in Settings is still there.
+
+### Changed
+
+- Encrypting the whole library (bookmark titles, addresses, notes, tags and workspace names) is now part of Pro. Your saved logins and locked notes are still encrypted for everyone. If you already encrypted your library, nothing changes: it keeps working, and you can turn it off without a license.
+
 ## [1.43.14] - 2026-10-17
 
 ### Added

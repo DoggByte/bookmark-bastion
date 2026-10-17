@@ -250,6 +250,7 @@ Every workspace and smartspace that has folders (or tag folders) shows a small *
 Above the list you will find:
 
 - The **title** of what you are viewing, and how many bookmarks it holds (`3 of 12` while a filter is active). In a workspace, hover the title to see a **⋯** button; it opens the same menu as the sidebar.
+- The **theme button**, at the left of the buttons: its picture is the colour mode in use (a **moon** for dark, a **sun** for light, a **sun and moon** for match system) and each press moves to the next one. See [Themes](#theme).
 - **New folder** (workspaces only), **Paste URL**, **Scan QR…** and **Add bookmark**.
 - A **search box** and a **sort order**. See [Searching, filtering and sorting](#search-filter).
 
@@ -285,7 +286,7 @@ To keep the manager beside your other windows, click the **pop-out icon**: eithe
 
 ### Themes
 
-Choose **Light**, **Dark** or **Match system** under **Settings → Appearance**. It applies to the pop-up and the manager.
+Press the **theme button** at the left of the buttons above the list to change the colours: it cycles **Match system** (a sun and moon), **Light** (a sun) and **Dark** (a moon), and its picture always shows the mode you are in. You can also choose **Light**, **Dark** or **Match system** under **Settings → Appearance**. Either way it applies to the pop-up and the manager. The button is not shown while the user guide is open; use Settings there.
 
 <a id="live"></a>
 
@@ -853,6 +854,8 @@ After you enter the passphrase the vault stays **unlocked until the browser clos
 
 ### Encrypting the whole library (optional)
 
+> **Pro:** turning on encryption of the whole library is part of [Pro](#pro). Your saved logins and locked notes are encrypted without a license. A library that is **already encrypted** keeps working, and you can unlock it and **Turn off…** with or without a license; a license that ends never locks you out of your bookmarks.
+
 By default only logins and locked notes are encrypted. Anyone who copies your browser profile can still see the titles, web addresses, notes and tags of your bookmarks. **Settings → Saved logins → Encrypt the whole library…** (off by default) encrypts those too, with the same key that protects your logins, so nothing readable is left in the browser's storage.
 
 - The dialog explains what changes and asks you to confirm that **without your passphrase the library cannot be recovered**. It also offers to export a backup first.
@@ -922,7 +925,7 @@ Open **Settings** at the bottom of the manager's sidebar. Changes are saved as s
 | **Browser sign-in prompts** | Off | Optional permissions that let a saved login answer a browser sign-in pop-up. See [Browser sign-in prompts](#logins-httpauth). |
 | **Saved logins** | Not set up | **Set up encrypted logins…** (you choose the key-derivation method), then **Lock now / Unlock…**, **Change passphrase or method…** and **Delete all saved logins…**. |
 | **Auto-lock** | After 15 minutes idle | Only when the browser closes, or after 5, 15, 30 or 60 minutes without use. |
-| **Encrypt the whole library** | Off | Also encrypts titles, addresses, notes, tags and workspace names. Needs an unlocked vault. See [Encrypting the whole library](#logins-library). |
+| **Encrypt the whole library** | Off | Also encrypts titles, addresses, notes, tags and workspace names. Needs an unlocked vault and [Pro](#pro). See [Encrypting the whole library](#logins-library). |
 | **Lock saved logins when the computer’s screen locks** | On | Lock the vault and wipe a copied secret as soon as the operating system locks the screen. |
 | **Clear copied secrets from the clipboard** | After 30 seconds | Never, or after 30 seconds, 1 or 2 minutes. Not applied to a copied username. |
 | **Bookmark Bastion Pro** | Free version | Enter or remove a license key. See [Bookmark Bastion Pro](#pro). |
@@ -943,15 +946,16 @@ The extension is free to use. **Pro** is an optional license that unlocks more.
 | | Free | Pro |
 | --- | --- | --- |
 | Bookmarks, workspaces, folders, tags, drag and drop, search, the pop-up | Everything | Everything |
-| Export, import (including your browser's bookmarks) and the encrypted library | Everything | Everything |
+| Export and import (including your browser's bookmarks) | Everything | Everything |
 | [Saved logins](#logins) | Up to **5** | No limit |
+| [Encrypting the whole library](#logins-library) | | Included |
 | [Browser sign-in prompts](#logins-httpauth) | Not answered | Answered from a saved login |
 | [Smartspaces](#smartspaces) | The default one | Create your own |
 | [Importing browser history](#backup-history) | | Included |
 | [Selecting several bookmarks](#selecting) and dragging the selection | | Included |
 | [Scanning QR pictures](#saving-qr) | One picture at a time | Up to 10 at a time |
 
-Without a license nothing is ever hidden or deleted: logins, smartspaces and settings you already have stay readable, usable and exportable (the one exception is that browser sign-in prompts are not answered). A control that needs Pro carries a **PRO** badge, and clicking it always says so, with an **Add license key** button that opens (or jumps to) this part of Settings.
+Without a license nothing is ever hidden or deleted: logins, smartspaces and settings you already have stay readable, usable and exportable (the exceptions are that browser sign-in prompts are not answered and that [encrypting the whole library](#logins-library) can't be turned on; a library that is already encrypted keeps working and can be turned off without a license). A control that needs Pro carries a **PRO** badge, and clicking it always says so, with an **Add license key** button that opens (or jumps to) this part of Settings.
 
 - **Getting Pro.** Go to [ko-fi.com/doggbyte](https://ko-fi.com/doggbyte) and choose **$5 for a 1-year license** or **$10 for a lifetime license**. **In the Ko-fi note, write which license you want (1-year or lifetime) and the email address to send the key to.** Your license key (it starts with `BB1.`) is sent to that address within 24 hours. Pro includes support and free updates for the length of the license you choose. The same link is in **Settings → Bookmark Bastion Pro**, under the key box, and in every notice that says a feature needs Pro.
 - **Upgrading from 1 year to lifetime.** Make another **$5** payment on Ko-fi: you only pay the difference, so the two payments add up to the $10 lifetime price. Write in the note that it is an upgrade, together with the activation key of your 1-year license and the email address to send the new key to.
