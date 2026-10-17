@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.11] - 2026-10-17
+
+### Changed
+
+- The toolbar pop-up shows the Bookmark Bastion logo next to its title instead of a generic bookmark icon, and the manager's sidebar shows the logo larger (32 px).
+
 ## [1.43.10] - 2026-10-17
 
 ### Changed
