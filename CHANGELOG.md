@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.9] - 2026-10-17
+
+### Changed
+
+- The README's steps for automatic updates now cover Brave installed as a Flatpak, and say to quit the browser completely before checking that the policy was picked up.
+
 ## [1.43.8] - 2026-10-17
 
 ### Changed
