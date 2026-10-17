@@ -2,7 +2,7 @@
 
 **A workspace-based bookmark manager for Chromium browsers** (Chrome, Edge, Brave, Vivaldi, Opera and others). Keep every bookmark in one place and group them into as many workspaces as you like, without ever saving a page twice.
 
-- **Version:** 1.43.6 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.6) · [CHANGELOG](CHANGELOG.md)
+- **Version:** 1.43.7 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.7) · [CHANGELOG](CHANGELOG.md)
 - **Author:** DoggByte · [doggbyte.com](https://doggbyte.com) · [doggbyte@bert2go.com](mailto:doggbyte@bert2go.com)
 - **Works in:** any Chromium-based browser that runs Chrome extensions (version 110 or newer). Firefox and Safari are not supported.
 - **Privacy:** no account, no server, no tracking. Your library stays on your computer.
@@ -29,8 +29,8 @@ The full story is in the [user guide](USER-GUIDE.md).
 
 Bookmark Bastion is **not in a web store**, so you install it by hand. It takes about two minutes and works the same in every Chromium browser.
 
-1. **Download** [`bookmark-bastion-v1.43.6.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.43.6/bookmark-bastion-v1.43.6.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.6).
-   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.43.6.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.43.6.zip SHA256`. The two values must be identical.)*
+1. **Download** [`bookmark-bastion-v1.43.7.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.43.7/bookmark-bastion-v1.43.7.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.7).
+   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.43.7.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.43.7.zip SHA256`. The two values must be identical.)*
 2. **Unzip it into a folder that will stay where it is**, for example `Documents\Bookmark Bastion` or `~/Apps/bookmark-bastion`. The browser loads the extension from this folder every time it starts, so do not put it in Downloads or on the Desktop, and do not delete it afterwards. After unzipping, the folder must contain a file named `manifest.json` directly inside it, not inside another folder.
 3. **Open the extensions page** of your browser: type `chrome://extensions` in the address bar (`edge://extensions` in Edge, `brave://extensions` in Brave, `vivaldi://extensions` in Vivaldi, `opera://extensions` in Opera) and press Enter.
 4. **Turn on Developer mode.** The switch is at the top right (in Edge it is at the bottom left of the page, in Opera at the top right).
@@ -61,6 +61,47 @@ Removing the extension on the extensions page deletes the library stored with it
 | A "Disable developer mode extensions" warning when the browser starts | Browsers show this for every extension installed by hand. Dismiss it; do not click "Disable". |
 | The extension disappeared after moving or deleting its folder | Put the folder back in the same place and click reload, or load it again from where it is now. A library is only lost if you removed the extension itself. |
 | Other problems | Write to [doggbyte@bert2go.com](mailto:doggbyte@bert2go.com) with your browser, its version and what happened. |
+
+## Automatic updates (optional)
+
+The zip above never updates itself: use **Settings → Updates → Check for updates** to see whether a newer version exists. If you would rather have your browser install and update Bookmark Bastion on its own, every release also carries a signed packed copy:
+
+| File | What it is |
+| --- | --- |
+| `bookmark-bastion-v1.43.7.crx` | the extension, packed and signed |
+| `updates.xml` | tells the browser which version is the newest and where its file is |
+| `bookmark-bastion-policy.json` | the browser setting that installs the packed copy and keeps it updated |
+
+**Where it works.** A browser only accepts an extension from outside its store when a *policy* says so. On **Linux** you can set one yourself. On **Windows and macOS** the browser accepts it only on computers managed by an organisation; on a personal computer it is ignored, so keep using the zip and **Check for updates** there.
+
+**On Linux (Brave, Chrome, Chromium or Edge):**
+
+1. Download `bookmark-bastion-policy.json` from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.7).
+2. Copy it into the browser's managed-policy folder (this needs `sudo`; the file name is up to you):
+   - Brave: `/etc/brave/policies/managed/`
+   - Chrome: `/etc/opt/chrome/policies/managed/`
+   - Chromium: `/etc/chromium/policies/managed/`
+   - Edge: `/etc/opt/edge/policies/managed/`
+
+   For Brave: `sudo mkdir -p /etc/brave/policies/managed && sudo cp bookmark-bastion-policy.json /etc/brave/policies/managed/bookmark-bastion.json`
+3. Restart the browser, open `brave://policy` (`chrome://policy`, `edge://policy`) and press **Reload policies**. `ExtensionInstallForcelist` should be listed with the status **OK**.
+4. Open the extensions page. Bookmark Bastion appears with the note **Installed by your administrator**, and the browser looks for new versions by itself every few hours.
+
+The file contains one line, the extension id and the address of `updates.xml` joined by a semicolon:
+
+```json
+{
+  "ExtensionInstallForcelist": [
+    "ggghpopkdbjekdfgpcbhcdlhnddgpgnl;https://github.com/DoggByte/bookmark-bastion/releases/latest/download/updates.xml"
+  ]
+}
+```
+
+On a managed Windows PC, add that text as a string value under `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave\ExtensionInstallForcelist` (`Google\Chrome` or `Microsoft\Edge` for those browsers); on a managed Mac, set the `ExtensionInstallForcelist` key for your browser in a configuration profile.
+
+**Good to know**
+- The packed copy is a **separate extension** from one loaded from the zip: it has its own id (`ggghpopkdbjekdfgpcbhcdlhnddgpgnl`) and its own library. Export your library from the zip copy first, import it into the packed one, then remove the zip copy.
+- An extension installed by policy cannot be removed from the extensions page. To uninstall it, delete the policy file and restart the browser.
 
 ## Free and Pro
 

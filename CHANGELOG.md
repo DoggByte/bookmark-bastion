@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.7] - 2026-10-17
+
+### Added
+
+- **Automatic updates (optional).** Every release now also carries a signed packed copy (`.crx`), an `updates.xml` and a browser policy file. With them, a browser on Linux, or a managed Windows PC or Mac, can install Bookmark Bastion and keep it updated by itself. The README explains the steps and the limits. The zip and **Check for updates** keep working as before for everyone else.
+
 ## [1.43.6] - 2026-10-17
 
 ### Added
