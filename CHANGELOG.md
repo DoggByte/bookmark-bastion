@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.8] - 2026-10-17
+
+### Changed
+
+- The toolbar pop-up shows the version number in small type under its title, and its buttons are centred on the title and version together.
+
 ## [1.43.7] - 2026-10-17
 
 ### Added
