@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.5] - 2026-10-17
+
+### Added
+
+- Getting Pro is now simple: **$10 for one year** or **$15 for a lifetime license**, bought on Ko-fi at ko-fi.com/doggbyte. Settings → Bookmark Bastion Pro shows the prices and has a link to the Ko-fi page.
+
 ## [1.43.4] - 2026-10-17
 
 ### Added
