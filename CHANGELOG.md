@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.12] - 2026-10-17
+
+### Fixed
+
+- Installing from the zip now gives the same extension id (`ggghpopkdbjekdfgpcbhcdlhnddgpgnl`) on every computer and in every folder, and it matches the packed copy, so your library and settings stay with the extension if you move the folder.
+
 ## [1.43.11] - 2026-10-17
 
 ### Changed

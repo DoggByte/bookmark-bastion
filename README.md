@@ -2,7 +2,7 @@
 
 **A workspace-based bookmark manager for Chromium browsers** (Chrome, Edge, Brave, Vivaldi, Opera and others). Keep every bookmark in one place and group them into as many workspaces as you like, without ever saving a page twice.
 
-- **Version:** 1.43.11 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.11) · [CHANGELOG](CHANGELOG.md)
+- **Version:** 1.43.12 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.12) · [CHANGELOG](CHANGELOG.md)
 - **Author:** DoggByte · [doggbyte.com](https://doggbyte.com) · [doggbyte@bert2go.com](mailto:doggbyte@bert2go.com)
 - **Works in:** any Chromium-based browser that runs Chrome extensions (version 110 or newer). Firefox and Safari are not supported.
 - **Privacy:** no account, no server, no tracking. Your library stays on your computer.
@@ -29,8 +29,8 @@ The full story is in the [user guide](USER-GUIDE.md).
 
 Bookmark Bastion is **not in a web store**, so you install it by hand. It takes about two minutes and works the same in every Chromium browser.
 
-1. **Download** [`bookmark-bastion-v1.43.11.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.43.11/bookmark-bastion-v1.43.11.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.11).
-   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.43.11.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.43.11.zip SHA256`. The two values must be identical.)*
+1. **Download** [`bookmark-bastion-v1.43.12.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.43.12/bookmark-bastion-v1.43.12.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.12).
+   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.43.12.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.43.12.zip SHA256`. The two values must be identical.)*
 2. **Unzip it into a folder that will stay where it is**, for example `Documents\Bookmark Bastion` or `~/Apps/bookmark-bastion`. The browser loads the extension from this folder every time it starts, so do not put it in Downloads or on the Desktop, and do not delete it afterwards. After unzipping, the folder must contain a file named `manifest.json` directly inside it, not inside another folder.
 3. **Open the extensions page** of your browser: type `chrome://extensions` in the address bar (`edge://extensions` in Edge, `brave://extensions` in Brave, `vivaldi://extensions` in Vivaldi, `opera://extensions` in Opera) and press Enter.
 4. **Turn on Developer mode.** The switch is at the top right (in Edge it is at the bottom left of the page, in Opera at the top right).
@@ -68,7 +68,7 @@ The zip above never updates itself: use **Settings → Updates → Check for upd
 
 | File | What it is |
 | --- | --- |
-| `bookmark-bastion-v1.43.11.crx` | the extension, packed and signed |
+| `bookmark-bastion-v1.43.12.crx` | the extension, packed and signed |
 | `updates.xml` | tells the browser which version is the newest and where its file is |
 | `bookmark-bastion-policy.json` | the browser setting that installs the packed copy and keeps it updated |
 
@@ -76,7 +76,7 @@ The zip above never updates itself: use **Settings → Updates → Check for upd
 
 **On Linux (Brave, Chrome, Chromium or Edge):**
 
-1. Download `bookmark-bastion-policy.json` from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.11).
+1. Download `bookmark-bastion-policy.json` from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.43.12).
 2. Copy it into the browser's managed-policy folder (this needs `sudo`; the file name is up to you):
    - Brave: `/etc/brave/policies/managed/`
    - Chrome: `/etc/opt/chrome/policies/managed/`
@@ -102,7 +102,7 @@ The file contains one line, the extension id and the address of `updates.xml` jo
 On a managed Windows PC, add that text as a string value under `HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave\ExtensionInstallForcelist` (`Google\Chrome` or `Microsoft\Edge` for those browsers); on a managed Mac, set the `ExtensionInstallForcelist` key for your browser in a configuration profile.
 
 **Good to know**
-- The packed copy is a **separate extension** from one loaded from the zip: it has its own id (`ggghpopkdbjekdfgpcbhcdlhnddgpgnl`) and its own library. Export your library from the zip copy first, import it into the packed one, then remove the zip copy.
+- The packed copy and the copy loaded from the zip are **the same extension**: both have the id `ggghpopkdbjekdfgpcbhcdlhnddgpgnl`, wherever the zip is unzipped to. The browser will not load both at once, so remove the zip copy before installing the packed one. Your library is kept per browser profile and id, so it stays; to be safe, export it first (Settings → Backup & transfer).
 - An extension installed by policy cannot be removed from the extensions page. To uninstall it, delete the policy file and restart the browser.
 
 ## Free and Pro
