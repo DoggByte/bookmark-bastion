@@ -114,7 +114,13 @@ You can also move a bookmark by dragging its card onto a workspace or a folder i
 
 Because a bookmark exists once and workspaces only reference it, there are two ways to get rid of something, and the app always asks which you mean.
 
-Inside a workspace, the trash button on a card asks **Remove from "Work"?** By default this removes **only the reference**. The bookmark stays in All Bookmarks and in your other workspaces.
+Inside a workspace, the trash button on a card removes **only the place you pressed it on**. If the bookmark is also in other folders of the same workspace, those stay. For *Vercel – deployments*, which is in both *Docs* and *Sprint tools*, the trash button on its *Docs* card asks **Remove from "Docs"?** and removes just that one:
+
+![The window "Remove from Docs?" for a bookmark that is in two folders, with the box "Remove it from every place in this workspace" framed in red and not ticked](images/organise-11-remove-place.png)
+
+If you do want it out of every place in the workspace, tick **Remove it from every place in this workspace**. It is never ticked for you.
+
+When the card is the bookmark's **only** place in the workspace, there is nothing else to keep, so the window asks **Remove from "Work"?** and the bookmark leaves the workspace. Either way the bookmark stays in All Bookmarks and in your other workspaces.
 
 ![The window "Remove from Work?", with the box "Also delete this bookmark from Bookmark Bastion" not ticked, and a Remove from workspace button](images/organise-9-remove.png)
 
@@ -126,7 +132,7 @@ Cancel, Esc, or a click outside the window leaves everything as it was.
 
 | You do this | What happens |
 | --- | --- |
-| Remove a bookmark from a workspace | Only the reference goes. It stays in All Bookmarks and in your other workspaces. You can undo it. |
+| Remove a bookmark from a workspace (trash button on a card) | Only that place goes. If the bookmark is also in other folders of the workspace, it stays there; tick the extra box to remove every place. It stays in All Bookmarks and in your other workspaces. You can undo it. |
 | Delete a bookmark | The bookmark and all its references go, and so does its saved login. This can't be undone. |
 | Delete a workspace | The workspace and its folders go. **Its bookmarks are never deleted**: they stay in All Bookmarks. |
 | Delete a folder | Only the folder goes. Its bookmarks stay in the workspace, under **No folder**. |

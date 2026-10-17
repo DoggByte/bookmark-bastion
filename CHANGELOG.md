@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.44.1] - 2026-10-17
+
+### Fixed
+
+- The trash button on a bookmark inside a workspace now removes only that one place. If the same bookmark is also in other folders of the workspace, it stays there. A new box, “Remove it from every place in this workspace”, is available when you want the old behaviour; it is never ticked for you.
+
 ## [1.44.0] - 2026-10-17
 
 ### Added
