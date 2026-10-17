@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.43.10] - 2026-10-17
+
+### Changed
+
+- The manager's sidebar shows the version number in small type under the title, and the button that opens the manager in its own window is centred on the title and version together.
+
 ## [1.43.9] - 2026-10-17
 
 ### Changed
