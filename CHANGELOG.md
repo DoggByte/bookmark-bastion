@@ -4,6 +4,12 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.46.0] - 2026-10-18
+
+### Added
+
+- When you activate a Pro license, a certificate of appreciation now thanks you for your support, with fireworks, confetti and the sound of fireworks to go with them, which start gently and build over about a minute to a finale of many bursts at once, after which the last of the confetti finishes falling. Close it with the **Close** button, the **×**, **Esc** or a click outside; the sound stops when you do. If your system is set to reduce motion, you get the certificate and a soft chime without the animation.
+
 ## [1.45.0] - 2026-10-18
 
 ### Added

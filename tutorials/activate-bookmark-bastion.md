@@ -43,13 +43,17 @@ Press **Activate** (or press Enter).
 
 ## 5. Check that Pro is on
 
-A green message says **Pro is on for** your email address, and the section changes:
+A certificate of appreciation opens over Settings to thank you, with fireworks, confetti and the sound of them, which start gently and build over about a minute to a finale, after which the last of the confetti finishes falling. Read it, enjoy the show, then press **Close** (or **Esc**, or the **×** in its corner). Closing it stops the fireworks and the sound at once.
+
+![The thank-you certificate for you@example.com over a sky of fireworks](images/activate-7-certificate.png)
+
+Behind it, the Pro section has changed:
 
 - The status line reads **Pro · licensed to** *your email address*. If your license has an end date, it also says **valid until** that date.
 - The key box and the **Activate** button disappear. There is nothing more to do.
 - A **Remove license…** button appears. It turns Pro off again.
 
-![Settings after activation: the green confirmation message and the status line "Pro · licensed to you@example.com"](images/activate-6-pro-on.png)
+![Settings after activation: the status line "Pro · licensed to you@example.com"](images/activate-6-pro-on.png)
 
 Press **Done**. The features that were marked **PRO** are open now.
 

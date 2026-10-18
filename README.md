@@ -2,7 +2,7 @@
 
 **A workspace-based bookmark manager for Chromium browsers** (Chrome, Edge, Brave, Vivaldi, Opera and others). Keep every bookmark in one place and group them into as many workspaces as you like, without ever saving a page twice.
 
-- **Version:** 1.45.0 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.45.0) · [CHANGELOG](CHANGELOG.md)
+- **Version:** 1.46.0 · [release notes](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.46.0) · [CHANGELOG](CHANGELOG.md)
 - **Author:** DoggByte · [doggbyte.com](https://doggbyte.com) · [doggbyte@bert2go.com](mailto:doggbyte@bert2go.com)
 - **Works in:** any Chromium-based browser that runs Chrome extensions (version 110 or newer). Firefox and Safari are not supported.
 - **Privacy:** no account, no server, no tracking. Your library stays on your computer.
@@ -29,8 +29,8 @@ The full story is in the [user guide](USER-GUIDE.md), and the [tutorials](tutori
 
 Bookmark Bastion is **not in a web store**, so you install it by hand. It takes about two minutes and works the same in every Chromium browser.
 
-1. **Download** [`bookmark-bastion-v1.45.0.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.45.0/bookmark-bastion-v1.45.0.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.45.0).
-   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.45.0.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.45.0.zip SHA256`. The two values must be identical.)*
+1. **Download** [`bookmark-bastion-v1.46.0.zip`](https://github.com/DoggByte/bookmark-bastion/releases/download/v1.46.0/bookmark-bastion-v1.46.0.zip) from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.46.0).
+   *(Optional: check the download against `SHA256SUMS.txt` from the same page. On Linux or macOS run `shasum -a 256 bookmark-bastion-v1.46.0.zip`, on Windows `certutil -hashfile bookmark-bastion-v1.46.0.zip SHA256`. The two values must be identical.)*
 2. **Unzip it into a folder that will stay where it is**, for example `Documents\Bookmark Bastion` or `~/Apps/bookmark-bastion`. The browser loads the extension from this folder every time it starts, so do not put it in Downloads or on the Desktop, and do not delete it afterwards. After unzipping, the folder must contain a file named `manifest.json` directly inside it, not inside another folder.
 3. **Open the extensions page** of your browser: type `chrome://extensions` in the address bar (`edge://extensions` in Edge, `brave://extensions` in Brave, `vivaldi://extensions` in Vivaldi, `opera://extensions` in Opera) and press Enter.
 4. **Turn on Developer mode.** The switch is at the top right (in Edge it is at the bottom left of the page, in Opera at the top right).
@@ -68,7 +68,7 @@ The zip above never updates itself: use **Settings → Updates → Check for upd
 
 | File | What it is |
 | --- | --- |
-| `bookmark-bastion-v1.45.0.crx` | the extension, packed and signed |
+| `bookmark-bastion-v1.46.0.crx` | the extension, packed and signed |
 | `updates.xml` | tells the browser which version is the newest and where its file is |
 | `bookmark-bastion-policy.json` | the browser setting that installs the packed copy and keeps it updated |
 
@@ -76,7 +76,7 @@ The zip above never updates itself: use **Settings → Updates → Check for upd
 
 **On Linux (Brave, Chrome, Chromium or Edge):**
 
-1. Download `bookmark-bastion-policy.json` from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.45.0).
+1. Download `bookmark-bastion-policy.json` from the [latest release](https://github.com/DoggByte/bookmark-bastion/releases/tag/v1.46.0).
 2. Copy it into the browser's managed-policy folder (this needs `sudo`; the file name is up to you):
    - Brave: `/etc/brave/policies/managed/`
    - Chrome: `/etc/opt/chrome/policies/managed/`
