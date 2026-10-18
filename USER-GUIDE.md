@@ -682,7 +682,7 @@ Your sort choice is remembered. **Clear filters** resets the search and tags in 
 
 A bookmark can remember the **username and password** for its site, and fill them in for you when the site asks you to sign in. It can also hold a **two-factor key**. This is optional: until you set it up, nothing is stored or encrypted and the rest of the extension works exactly as before.
 
-> The free version keeps up to **5** saved logins; [Pro](#pro) has no limit. A login you already have can always be changed, and a backup with more logins still imports in full.
+> The free version keeps up to **5** saved logins (bookmarks that have one) and **one account** on each; [Pro](#pro) has no limit on either. A login you already have can always be changed, and a backup with more logins still imports in full.
 
 > [!WARNING]
 > **Read this first.** Each login is encrypted on your device with a random key that a **passphrase you choose** protects. The passphrase is never stored anywhere. **Without it your saved logins cannot be decrypted by anyone, and there is no recovery.** If you forget it, the only option is to delete the saved logins and start again.
@@ -700,14 +700,29 @@ Only logins and the [notes you lock](#notes-lock) are encrypted. Titles, web add
 
 A small **key icon** on the card shows that a login is saved. You can also add or change a login from the pop-up's collapsible **Sign-in** section.
 
+<a id="logins-accounts"></a>
+
+### Several accounts on one bookmark
+
+Some sites have more than one user behind the same sign-in page: a personal and a work account, or a few people sharing one bookmark. A bookmark can keep **several accounts**, each with its own username, password and [two-factor key](#logins-totp).
+
+> **Pro:** more than one account on a bookmark is part of [Pro](#pro). The free version keeps one account on each bookmark. Accounts you already have are never removed if a license lapses.
+
+1. Edit the bookmark (or open the pop-up's **Sign-in** section) and press **Add another account** under the login. A second set of boxes appears.
+2. Fill in the username, password and, if the site asks for it, the authenticator key. Repeat for as many accounts as you need (up to 20).
+3. Press **Save changes**. An account left completely empty is not saved.
+
+With two or more accounts each one gets a heading and three small buttons: **move up**, **move down** and **remove this account**. The order is the order of the list when you [fill a login](#logins-fill). The first account is the one that answers a [browser sign-in pop-up](#logins-httpauth), because a pop-up cannot ask you which one you want. **Remove saved login** removes every account on the bookmark.
+
 <a id="logins-fill"></a>
 
 ### Filling a login
 
 1. Open the site's sign-in page.
 2. Click the toolbar button. A **Saved login for this site** card appears when a bookmark with a saved login matches the page. Press **Fill login**, or **Unlock and fill** and enter your passphrase if the vault is locked. With several matches there is one **Fill: title** button for each.
-3. Or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> to fill without opening the pop-up.
-4. Review the form and sign in yourself. **The extension never submits the form for you.**
+3. If the bookmark has [several accounts](#logins-accounts), a **list of their usernames** appears beside the button. Choose the account you want and press **Fill**. (The usernames are encrypted, so when the vault is locked the list appears after you unlock: choose, then press **Fill**.) The account you used last is selected next time.
+4. Or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd> to fill without opening the pop-up. When the bookmark has several accounts the shortcut fills nothing: it opens the pop-up so you can choose.
+5. Review the form and sign in yourself. **The extension never submits the form for you.**
 
 The toolbar button briefly shows what happened:
 
@@ -717,6 +732,7 @@ The toolbar button briefly shows what happened:
 | **1/2** (amber) | Only the username was filled; the password will be filled when its screen appears. |
 | **?** (amber) | No saved login matches this page. |
 | **LOCK** (amber) | The vault is locked. Unlock it from the pop-up or the manager first. |
+| **▾** (amber) | The bookmark has several accounts. Choose one in the pop-up, which opens. |
 | **!** (red) | The form could not be filled. |
 
 The toolbar icon itself also shows whether the vault is locked: while it is locked the icon changes to a **locked version with a padlock**, and it goes back to normal once you unlock it. Until you set up saved logins the icon never shows the padlock.
@@ -756,6 +772,7 @@ Some sites (intranet pages, routers, staging servers) answer with “401 Unautho
 It is narrow on purpose:
 
 - Only a bookmark with that box **ticked** is used. An ordinary website login is never sent to a pop-up.
+- With [several accounts](#logins-accounts) on the bookmark, the **first** one that has a username or a password answers.
 - Only for **the page you are opening**, never for an image, script or frame another page embeds.
 - The address must be **https** (or `localhost`) and match the bookmark's origin exactly.
 - **Proxy** sign-in prompts and other schemes (NTLM, Kerberos) are never answered.
@@ -817,6 +834,8 @@ A bookmark with a saved login shows a **key button**. Click it to copy, without 
 - the **username**,
 - the **password**,
 - or the current **authenticator code**.
+
+With [several accounts](#logins-accounts) each item says whose it is, for example *Copy password: alice*.
 
 A counter-based code moves its counter on when copied. The passphrase is asked first if the vault is locked.
 
@@ -949,6 +968,7 @@ The extension is free to use. **Pro** is an optional license that unlocks more.
 | Bookmarks, workspaces, folders, tags, drag and drop, search, the pop-up | Everything | Everything |
 | Export and import (including your browser's bookmarks) | Everything | Everything |
 | [Saved logins](#logins) | Up to **5** | No limit |
+| [Several accounts on one bookmark](#logins-accounts) | One | Up to 20 |
 | [Encrypting the whole library](#logins-library) | | Included |
 | [Browser sign-in prompts](#logins-httpauth) | Not answered | Answered from a saved login |
 | [Smartspaces](#smartspaces) | The default one | Create your own |

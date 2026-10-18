@@ -4,6 +4,14 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.47.0] - 2026-10-18
+
+### Added
+
+- **Several accounts on one bookmark (Pro).** If a site has more than one user behind the same sign-in page, say a personal and a work account, you no longer need a bookmark for each. Press **Add another account** under the login in a bookmark's Edit dialog or the toolbar pop-up to add another username, password and authenticator key. You can move accounts up and down or remove one.
+- When you fill a bookmark that has several accounts, the pop-up shows a **list of the usernames**: choose one and press **Fill**. The one you used last is selected next time. The keyboard shortcut opens the pop-up instead of guessing which account you mean. The Copy menu on a card says which account each item belongs to. A browser sign-in pop-up is answered by the first account.
+- The free version keeps one account per bookmark. If a Pro license ends, the accounts you already saved stay readable and usable; you just can't add more.
+
 ## [1.46.0] - 2026-10-18
 
 ### Added
