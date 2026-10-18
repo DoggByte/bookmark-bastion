@@ -933,6 +933,7 @@ Open **Settings** at the bottom of the manager's sidebar. Changes are saved as s
 | **Updates** | | **Check for updates** asks GitHub whether a newer version exists. See [Updating](#install-update). |
 | **Library clean-up** | | **Manage tags…** See [Library clean-up](#cleanup). |
 | **Backup & transfer** | | **Export JSON**, **Import JSON…** and **Paste JSON…**. See [Backup, export and import](#backup). |
+| **Automatic backups** | Off | Saves a copy of your library on a schedule. Needs [Pro](#pro). See [Automatic backups](#backup-auto). |
 | **Start fresh** | | **Erase everything…** deletes every bookmark, workspace, note, saved login and setting from this browser, after you confirm, and starts again as if the extension was just installed. It can’t be undone, so export a backup first. |
 
 The settings dialog also shows the version number you are running.
@@ -952,6 +953,7 @@ The extension is free to use. **Pro** is an optional license that unlocks more.
 | [Browser sign-in prompts](#logins-httpauth) | Not answered | Answered from a saved login |
 | [Smartspaces](#smartspaces) | The default one | Create your own |
 | [Importing browser history](#backup-history) | | Included |
+| [Automatic backups](#backup-auto) | | Included |
 | [Selecting several bookmarks](#selecting) and dragging the selection | | Included |
 | [Scanning QR pictures](#saving-qr) | One picture at a time | Up to 10 at a time |
 
@@ -1034,6 +1036,24 @@ The next screen lists the pages from your history, newest first:
 - **Import to** is **Unassigned** by default, so the bookmarks wait in *Unassigned* until you sort them. Choose any workspace (and one of its folders) instead, or **New workspace…** and give it a name; a name that is already taken is refused, so pick that workspace from the list.
 - **Tag them “from-history”** (off by default) tags the new bookmarks so you can find them later. Pages you already have are left as they are.
 - Before you press **Import** the screen says what would happen. Afterwards a report shows what was added and what was ignored because you already had it.
+
+<a id="backup-auto"></a>
+
+### Automatic backups
+
+> **Pro:** automatic backups are part of [Pro](#pro). Backups already saved are never deleted if a license ends.
+
+**Settings → Automatic backups** saves a copy of your whole library by itself, on a schedule, while the browser is open. Each copy is the same file **Export JSON** makes, so you restore one with **Import JSON…** like any other. Press **Enable backups…**: the browser asks to allow *downloads* (that is how a copy is saved), a first backup is made straight away, and the next ones follow on the schedule. **Disable backups** stops it and gives the permission back; the backups already saved stay where they are.
+
+- **Back up every.** Days, hours and minutes, from 5 minutes to 30 days. The default is every 8 hours. If the browser was closed when one was due, it is made when the browser starts.
+- **Folder.** A folder **inside your browser's download folder** (an extension can't write anywhere else by itself). The default is *Bookmark Bastion backups*. Use `/` for a folder inside a folder; the folder is created if it doesn't exist. Characters a computer would refuse in a name are dropped, and there is no way to point outside the download folder. To end up somewhere else, change the browser's own download folder, or make the backup folder a link to the place you want.
+- **Compress each backup into a .zip file.** Off by default. The zip holds the same JSON file.
+- **Include saved logins and locked notes.** On by default. They stay encrypted in the file, exactly as when you export with passwords, and you need your passphrase to bring them back. Turn it off for backups without any login information. The file name ends in `-with-logins` when logins are inside.
+- **Skip a backup when nothing has changed since the last one.** Off by default, so a backup is always made at the set interval. When it is on, a backup that would be identical to the last one (apart from the time it was made) is skipped, and the status line says so. **Back up now** always saves a copy.
+- **Keep the newest backups.** The default is 30; 0 keeps them all. Older backups are deleted, but **only files this extension saved itself**: nothing else in the folder is touched. A file you already moved or deleted is simply forgotten.
+- **Back up now** saves one at once, whatever the schedule says.
+
+The status line under the heading shows when the last backup was made, when the next one is due, and how many are kept. If your library is [encrypted](#logins-library) and locked when a backup is due, it **waits**: the backup is made as soon as you unlock. **Backup files are plain text, even when your library is encrypted** (only saved logins and locked notes stay encrypted inside them), so keep the backup folder somewhere safe. If the license ends or the downloads permission is taken away, backups pause and the status line says why.
 
 <a id="backup-samples"></a>
 
@@ -1154,7 +1174,8 @@ The only network traffic the extension creates is the optional description looku
 | `idle` | Learn that the computer's screen has locked, so saved logins lock with it. Nothing about your activity is read or kept. |
 | `favicon` | Show site icons using the browser's own favicon cache. |
 | `activeTab`, `scripting` | One-click autofill: when you click the toolbar button or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>L</kbd>, the extension may fill the login form on **that tab only**, for that moment. |
-| `offscreen`, `clipboardWrite` | Wipe a copied secret from the clipboard after the delay in Settings, through a hidden helper page. Nothing is read, sent or kept. |
+| `offscreen`, `clipboardWrite` | Wipe a copied secret from the clipboard after the delay in Settings, and hand an [automatic backup](#backup-auto) to the browser to save, through a hidden helper page. Nothing is read, sent or kept. |
+| `downloads`, `downloads.ui` *(optional)* | Only while [automatic backups](#backup-auto) are on: save the backup files into your download folder (`downloads`) and keep the browser's download bubble quiet while it does (`downloads.ui`). The browser asks first, and both are given back when you turn backups off. Your existing downloads are never read or listed: only the files this extension saved itself are ever removed. |
 | All sites *(optional)* | Only if you grant it: reading the pages of your bookmarks for their descriptions, and answering browser sign-in prompts if you turn those on. |
 | `webRequest`, `webRequestAuthProvider` *(optional)* | Only if you turn on **Browser sign-in prompts**. |
 | `history` *(optional)* | Only while you import pages from your browser history (**Settings → Backup & transfer**). The browser asks first, your history is only read and never changed, and the permission is given back when the dialog closes. |

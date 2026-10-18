@@ -4,6 +4,13 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.45.0] - 2026-10-18
+
+### Added
+
+- **Automatic backups (Pro).** Settings → Automatic backups saves a copy of your whole library by itself, on a schedule: every 8 hours by default, or any number of days, hours and minutes you choose. The copies go into a folder inside your download folder (you pick its name), and you can compress each one into a zip file. Saved logins are included by default (still encrypted; turn that off for copies without them). You can also skip a copy when nothing has changed since the last one, and choose how many of the newest copies to keep: older ones are deleted, but only files Bookmark Bastion saved itself. **Back up now** saves one right away. Each file is named with the date and time it was made, for example `bookmark-bastion-backup-2026-10-17_14-30.json`. If your library is encrypted and locked when a copy is due, it is made as soon as you unlock. The browser asks to allow downloads when you turn it on, and the permission is given back when you turn it off.
+- A new tutorial with screenshots shows how to start from a sample library for your kind of work, with its workspaces, folders and example bookmarks, or just the workspaces and folders.
+
 ## [1.44.1] - 2026-10-17
 
 ### Fixed
