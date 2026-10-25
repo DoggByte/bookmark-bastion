@@ -4,6 +4,51 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.50.3] - 2026-10-25
+
+### Fixed
+
+- Right-clicking a workspace's folder in the sidebar, or clicking its ⋯ button, did nothing while you were looking at anything other than that workspace (All Bookmarks, a smartspace, a selected bookmark). The folder menu now always opens.
+- The folder menu's **Move folder to workspace** list was wrong when another workspace was open: it offered the folder's own workspace and left out the one you had open. It now lists every other workspace, and the folder's actions (Edit, Open all, Export, Delete) always apply to the folder you clicked.
+
+## [1.50.2] - 2026-10-25
+
+### Changed
+
+- In the manager's sidebar, **All Bookmarks** now has a folder icon and **Unassigned** a folder icon with a question mark.
+
+## [1.50.1] - 2026-10-25
+
+### Changed
+
+- In the pop-up, the **Revert Changes** button now sits at the far left of the bottom row, away from **Update**, so you are less likely to press it by accident.
+
+## [1.50.0] - 2026-10-25
+
+### Changed
+
+- The pop-up's button at the bottom now says **Add** for a page that is not saved yet, and **Update** for one that is. For a saved page, **Update** is greyed out until you change something. Once you have, a **Revert Changes** button appears next to it: it puts the form back to what is saved, keeps the pop-up open and saves nothing, then goes away again.
+
+## [1.49.0] - 2026-10-25
+
+### Changed
+
+- The pop-up no longer shows an "Already saved" label. A small icon next to the title now tells you where the page stands: a grey outline when it is not saved yet, an orange pencil when it is saved but you have changes you have not saved, and a solid green square when it is saved and up to date. The colours are readable in both the light and the dark look, and hovering the icon shows what it means.
+
+## [1.48.0] - 2026-10-25
+
+### Added
+
+- The toolbar icon now shows a small **login badge** on a page whose site has a saved login, in both the unlocked and the locked look, so you can tell before you click that a login is waiting. It follows the tab you are looking at and works while your logins are locked.
+### Fixed
+
+- If your browser is set to *Ask where to save each file before downloading*, automatic backups used to open a Save as window at every backup, and the windows piled up while you were away. Now the first such window is closed, the automatic backups **pause**, and Settings explains what to change (turn that browser setting off) with a **Try again** button. **Back up now** still lets you choose where to save. The guide and the Settings text now say up front that this browser setting has to be off for backups to save by themselves.
+
+### Changed
+
+- After you save a page from the toolbar popup, the confirmation is now a centred card with a large check mark and the message **SUCCESS!** "Bookmark added" (or "Bookmark updated" when you edited one), with a burst of confetti (skipped if your system is set to reduce motion), and it stays up a little longer.
+- When you press Fill while the browser is showing its own sign-in pop-up, the message now explains that this pop-up can't be filled from the toolbar button and tells you to turn on **Answer the browser’s sign-in pop-up** for that bookmark (Pro).
+
 ## [1.47.0] - 2026-10-18
 
 ### Added

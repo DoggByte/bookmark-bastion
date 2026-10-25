@@ -132,9 +132,9 @@ Click the toolbar button, or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>.
 2. Add a **Note** (why you saved it) and **Tags** if you want.
 3. Under **Workspaces**, tick the workspaces it should appear in. To make a new one, type a name into **New workspace…** and press **Add**.
 4. Optionally open **Sign-in (optional, encrypted)** to save a login. See [Saved logins](#logins).
-5. Press **Save**.
+5. Press **Add**.
 
-If the page is already in your library the pop-up shows an **Already saved** badge, fills in what you saved before, and its button reads **Update**: use it to change the existing bookmark instead of making another.
+A small icon next to the title tells you where the page stands: a grey outlined square means it is **not saved yet**, an orange pencil means it is saved but you have **changes you have not saved yet**, and a green filled square means it is **saved** and the form matches it. If the page is already in your library the pop-up fills in what you saved before, and its button reads **Update**: use it to change the existing bookmark instead of making another. **Update** stays greyed out until you change something. Once you have, **Revert Changes** appears at the far left of the bottom row, away from **Update** so it is not pressed by accident; it puts the whole form back to what is saved (without closing the pop-up, and without saving anything) and then disappears. A workspace you created in the pop-up in the meantime stays in the list, unticked.
 
 The pop-up also has a **Manager** button that opens the manager, and a small **pop-out icon** beside it that opens the manager in its own window.
 
@@ -735,7 +735,7 @@ The toolbar button briefly shows what happened:
 | **▾** (amber) | The bookmark has several accounts. Choose one in the pop-up, which opens. |
 | **!** (red) | The form could not be filled. |
 
-The toolbar icon itself also shows whether the vault is locked: while it is locked the icon changes to a **locked version with a padlock**, and it goes back to normal once you unlock it. Until you set up saved logins the icon never shows the padlock.
+The toolbar icon itself has four looks. It shows whether the vault is locked: while it is locked the icon changes to a **locked version with a padlock**, and it goes back to normal once you unlock it. Until you set up saved logins the icon never shows the padlock. On a page whose site has a saved login (the same rule **Fill** uses: a bookmark with a login on the page's exact address, such as `https://example.com`) the icon also carries a small **login badge**, in the unlocked and in the locked look, so you can see before you click that a login is waiting. The badge follows the tab you are looking at, and it shows while the vault is locked too, because only the fact that a login exists is needed. If your whole library is [encrypted](#logins-library) and locked, the bookmarks can't be read, so there is no badge until you unlock.
 
 <a id="logins-twostep"></a>
 
@@ -778,6 +778,8 @@ It is narrow on purpose:
 - **Proxy** sign-in prompts and other schemes (NTLM, Kerberos) are never answered.
 - Each request is answered **once**. If the server refuses the login, the browser's own pop-up appears instead of looping.
 - The vault must be unlocked. Otherwise the badge shows **LOCK** and the browser's pop-up appears.
+
+If you press **Fill** while the browser's own sign-in pop-up is open, you get “The browser didn’t allow access to this page”: that pop-up is not a web page, so a login can't be filled into it. Tick the box above on the bookmark, turn the feature on in Settings, and reload the page so the pop-up is answered for you.
 
 Turn it off again in the same place.
 
@@ -1063,6 +1065,8 @@ The next screen lists the pages from your history, newest first:
 
 > **Pro:** automatic backups are part of [Pro](#pro). Backups already saved are never deleted if a license ends.
 
+> **One browser setting has to be changed first.** For backups to save by themselves, turn **off** *Ask where to save each file before downloading* in the browser's download settings (in Brave: `brave://settings/downloads`; in Chrome and Edge: Settings → Downloads). With it off, every backup is saved silently into the backup folder. With it on, the browser opens a Save as window for each backup instead, and the backups are no longer automatic. An extension can't change this setting for you.
+
 **Settings → Automatic backups** saves a copy of your whole library by itself, on a schedule, while the browser is open. Each copy is the same file **Export JSON** makes, so you restore one with **Import JSON…** like any other. Press **Enable backups…**: the browser asks to allow *downloads* (that is how a copy is saved), a first backup is made straight away, and the next ones follow on the schedule. **Disable backups** stops it and gives the permission back; the backups already saved stay where they are.
 
 - **Back up every.** Days, hours and minutes, from 5 minutes to 30 days. The default is every 8 hours. If the browser was closed when one was due, it is made when the browser starts.
@@ -1074,6 +1078,8 @@ The next screen lists the pages from your history, newest first:
 - **Back up now** saves one at once, whatever the schedule says.
 
 The status line under the heading shows when the last backup was made, when the next one is due, and how many are kept. If your library is [encrypted](#logins-library) and locked when a backup is due, it **waits**: the backup is made as soon as you unlock. **Backup files are plain text, even when your library is encrypted** (only saved logins and locked notes stay encrypted inside them), so keep the backup folder somewhere safe. If the license ends or the downloads permission is taken away, backups pause and the status line says why.
+
+**If a Save as window opens.** That is the browser's own setting *Ask where to save each file before downloading* being on (see the note at the top of this section): turning it off makes backups save by themselves, turning it back on brings the window back. With it on, the browser would open a Save as window for every backup, and they would pile up while you are away. So when a backup would open one, Bookmark Bastion closes it, **pauses** the automatic backups and shows a warning with a **Try again** button. Turn that browser setting off (in the browser's download settings), then press **Try again**: backups save by themselves again. **Back up now** still works while paused: you choose where to save that one. Changing any backup setting also lifts the pause.
 
 <a id="backup-samples"></a>
 
