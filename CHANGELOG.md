@@ -4,6 +4,43 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.53.0] - 2026-10-26
+
+### Changed
+
+- The toolbar popup no longer shows the QR button next to the authenticator key; use the manager's Add / Edit dialog to show a key as a QR code.
+- The **Recovery codes** box now appears only once a login has an authenticator key. Codes you already saved always stay visible.
+- In the Add / Edit dialog, the button that reads an authenticator key from a picture is now called **QR Image** (it was **Scan QR image…**).
+
+### Added
+
+- A new **QR Image** button with a download arrow saves the authenticator key as a QR picture, to scan into another authenticator app. The picture holds your key, so delete it once it is scanned.
+
+## [1.52.0] - 2026-10-26
+
+### Added
+
+- **Recovery codes.** Each saved login account can now keep the recovery (backup) codes a site gives you for when you lose your authenticator. Paste them one per line; they stay hidden until you press **Show**, you see how many are unused, you can tick codes as used, and **Copy next unused** copies the next one and marks it used. They are encrypted with the rest of the login and are never filled into pages for you.
+- **Show an authenticator key as a QR code.** A new QR button next to the authenticator key shows the key as a QR code you can scan into another authenticator app. It works in the manager and in the toolbar popup.
+
+## [1.51.0] - 2026-10-26
+
+### Added
+
+- **Settings** now shows a build number next to the version. Mention it together with the version when you report a problem.
+
+## [1.50.5] - 2026-10-25
+
+### Changed
+
+- In the toolbar popup, the header with the logo, the save-state icon and the **Manager** buttons now stays fixed at the top, so you can always see whether the page is saved or changed and open the manager without scrolling up.
+
+## [1.50.4] - 2026-10-25
+
+### Changed
+
+- In the toolbar popup, the **Add** / **Update** and **Revert Changes** buttons now stay fixed at the bottom and are always visible, so you no longer have to scroll down to save.
+
 ## [1.50.3] - 2026-10-25
 
 ### Fixed

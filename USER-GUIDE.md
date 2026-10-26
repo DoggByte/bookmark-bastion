@@ -108,7 +108,7 @@ Keep the folder where it is: the browser reads the extension from it every time 
 
 ### Updating
 
-To find out whether a newer version exists, press **Settings → Updates → Check for updates**: it asks GitHub for the newest release (one request, only when you press the button; nothing about you or your library is sent) and links to its download page. You can also open the [releases page](https://github.com/DoggByte/bookmark-bastion/releases/latest) yourself. Download the zip, replace the files with it, then press the **reload** icon on the extension's card on your browser's extensions page. Your data is stored in the browser profile, so it is kept, and it is upgraded automatically when the storage format changes.
+To find out whether a newer version exists, press **Settings → Updates → Check for updates**: it asks GitHub for the newest release (one request, only when you press the button; nothing about you or your library is sent) and links to its download page. You can also open the [releases page](https://github.com/DoggByte/bookmark-bastion/releases/latest) yourself. Download the zip, replace the files with it, then press the **reload** icon on the extension's card on your browser's extensions page. Your data is stored in the browser profile, so it is kept, and it is upgraded automatically when the storage format changes. The bottom of **Settings** shows the version and a **build** number: give both when you report a problem.
 
 <a id="install-move"></a>
 
@@ -132,7 +132,7 @@ Click the toolbar button, or press <kbd>Alt</kbd>+<kbd>Shift</kbd>+<kbd>S</kbd>.
 2. Add a **Note** (why you saved it) and **Tags** if you want.
 3. Under **Workspaces**, tick the workspaces it should appear in. To make a new one, type a name into **New workspace…** and press **Add**.
 4. Optionally open **Sign-in (optional, encrypted)** to save a login. See [Saved logins](#logins).
-5. Press **Add**.
+5. Press **Add**. The title row at the top (with the save-state icon and the **Manager** buttons) and the buttons along the bottom stay fixed, so they are always in reach however long the form gets.
 
 A small icon next to the title tells you where the page stands: a grey outlined square means it is **not saved yet**, an orange pencil means it is saved but you have **changes you have not saved yet**, and a green filled square means it is **saved** and the form matches it. If the page is already in your library the pop-up fills in what you saved before, and its button reads **Update**: use it to change the existing bookmark instead of making another. **Update** stays greyed out until you change something. Once you have, **Revert Changes** appears at the far left of the bottom row, away from **Update** so it is not pressed by accident; it puts the whole form back to what is saved (without closing the pop-up, and without saving anything) and then disappears. A workspace you created in the pop-up in the meantime stays in the list, unticked.
 
@@ -794,6 +794,8 @@ A login can hold the **authenticator key** that apps like Google Authenticator, 
 3. A valid key immediately shows the **current code** with a countdown and a Copy button. Check it against what the site asks for. A key the extension cannot use is refused, with the reason, and nothing is saved.
 4. Save. The key is **encrypted with the login**: same passphrase, same backups, and re-encrypted when you change the passphrase.
 
+To set the same key up in **another authenticator app**, press the square QR button beside the key box in the manager's Add / Edit dialog (the toolbar pop-up has no such button). It shows the key as a QR code in its own window, ready to scan; close it when you are done. Anyone who sees that code can make your sign-in codes, so only open it when you need it. A key that cannot be used says why instead.
+
 **Filling:** when you fill a login, any verification-code box on the page gets the current code. That includes boxes marked as a one-time code, boxes named like `otp`, `totp`, `verification code`, `security code` or `2fa`, and a row of single-character boxes as long as the code. A page that shows only the code box gets just the code.
 
 The page is **never given the key**, only the codes for the next minute and a half. Page scripts cannot read them, and they are dropped when the watch ends.
@@ -813,17 +815,33 @@ Not supported: push approvals, SMS or e-mail codes, and keys that are not one of
 > [!IMPORTANT]
 > A second factor stored next to the password is **less independent** than one on a separate device. It is convenient and still encrypted, but if you rely on two-factor to protect against someone who has your passphrase, keep the key in a separate authenticator app.
 
+<a id="logins-recovery"></a>
+
+### Recovery codes
+
+Many sites give you a list of **recovery (backup) codes** when you turn on two-factor sign-in: one-time codes for the day you lose your authenticator. Each account of a login can keep its own list, under **Recovery codes** in the Sign-in section. The part appears once the account has an authenticator key, and stays as long as it holds codes.
+
+- Paste the codes, one per line (commas also work), and press **Add codes**. A code you already saved is not added twice.
+- The list shows how many are unused (“3 of 10 unused”). The codes themselves stay hidden until you press **Show**.
+- **Copy next unused** copies the first unused code and marks it used. The clipboard is cleared again after a while, like any copied secret (see [Clipboard clearing](#logins-clipboard)).
+- Tick **used** by hand for a code you typed in yourself, or press the **×** to remove one. Used codes are crossed out, not deleted, so you can see what is left.
+- Up to 60 codes per account. Recovery codes are encrypted with the login: same passphrase, same backups.
+
+Recovery codes are saved and shown here but never filled into pages for you.
+
 <a id="logins-qr"></a>
 
 ### Scanning a QR picture
 
 Instead of typing the key, give the form a picture of the QR code the site showed. A screenshot is fine.
 
-- **In the Add / Edit dialog:** press **Scan QR image…** to choose a file, drop a picture on the key box, or paste a screenshot with <kbd>Ctrl</kbd>+<kbd>V</kbd> anywhere in the Sign-in section.
-- **In the pop-up:** paste a screenshot or drop the picture. (There is no file button, because the browser closes the pop-up when the system file dialog opens.)
+- **In the Add / Edit dialog:** press the **QR Image** button with the upload arrow to choose a file, drop a picture on the key box, or paste a screenshot with <kbd>Ctrl</kbd>+<kbd>V</kbd> anywhere in the Sign-in section.
+- **In the pop-up:** paste a screenshot or drop the picture. (There are no **QR Image** buttons, because the browser closes the pop-up when the system file dialog opens.)
 - PNG, JPEG, WebP and GIF up to 10 MB. A small code inside a big screenshot, and light-on-dark codes, are found.
 - The key box is filled and the live code appears so you can check it. The status line names the account the code was for.
 - A picture that is not a usable key is refused with the reason: no QR code found, not an authenticator code, or a damaged transfer code.
+
+To go the other way, press the **QR Image** button with the download arrow: the key in the box is saved as a QR picture (a PNG named after the site, in your browser's download folder) that you can scan into another authenticator app. The picture holds your key, so anyone who gets the file can make your sign-in codes: delete it once it is scanned. Nothing is uploaded; the picture is made on your device. **Show the key as a QR code** (the square QR button) shows the same code on screen without making a file.
 
 **Privacy of the picture.** It is read on your device and leaves no trace. It is never uploaded, and only ever held in memory: not written to extension storage, browser storage, a cache or a database, and never shown on the page. As soon as the text has been read, every pixel buffer made along the way is overwritten with zeros. A screenshot you **paste** is also on the system clipboard, so after a code is read from it the clipboard is replaced with a blank. (Your operating system's own “recent files” list, which the extension cannot reach, may still name a file you picked.)
 
