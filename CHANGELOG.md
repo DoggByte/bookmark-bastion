@@ -4,6 +4,13 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.53.1] - 2026-10-31
+
+### Fixed
+
+- **Fill login** now works on sign-in pages whose boxes show their label inside the box until you type, such as many sites built with Vue.
+- When a cookie notice or pop-up is covering the sign-in form, the extension now says so and asks you to close it, instead of reporting that no sign-in form was found.
+
 ## [1.53.0] - 2026-10-26
 
 ### Changed
