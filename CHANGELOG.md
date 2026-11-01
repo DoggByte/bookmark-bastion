@@ -4,6 +4,20 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.53.3] - 2026-11-01
+
+### Fixed
+
+- **Fill login** picks the right boxes more often. It leaves a site search box, a newsletter box, a "forgot password" box and a recovery-code box alone, fills the sign-in form rather than the sign-up form on a page that has both, and still fills a password box that the page's "show password" button has turned into plain text.
+- **Fill login** finds a username box that is named only by its label, or that sits just above a form holding only the password, and works on sites that enable their Sign in button only after typing (it now sends key presses too).
+- **Verification codes**: Microsoft and Facebook code boxes are recognised, and so is a box that is simply called "Code" or "PIN" on a code screen. The code is never put in a recovery-code box.
+
+## [1.53.2] - 2026-10-31
+
+### Fixed
+
+- **Fill login** now works on sign-in forms built as web components, such as the Log on box on E*TRADE.
+
 ## [1.53.1] - 2026-10-31
 
 ### Fixed

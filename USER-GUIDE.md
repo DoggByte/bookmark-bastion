@@ -726,6 +726,8 @@ With two or more accounts each one gets a heading and three small buttons: **mov
 
 If a cookie notice or pop-up is in front of the sign-in form, nothing is filled and the pop-up says so: close the notice, then fill again.
 
+Fill looks at what each box is called (its name, its placeholder and its label) to pick the right ones. It leaves a site search box, a newsletter box, a “forgot password” box and a recovery-code box alone. On a page with both a sign-in and a sign-up form it fills the sign-in one, and a password box that the page's “show password” button has turned into plain text is still filled.
+
 The toolbar button briefly shows what happened:
 
 | Badge | Meaning |
@@ -946,7 +948,7 @@ Exporting never needs the vault to be unlocked. When importing a file that conta
 - ✅ Page content, other extensions and websites cannot read the vault. A website only sees a login you chose to fill into it.
 - ⚠️ **A weak or reused passphrase can be guessed offline**, even with 600,000 iterations. Use a long, unique passphrase.
 - ⚠️ While the vault is **unlocked**, malware running as you, or someone using your unlocked browser, can use it. Lock it when you step away.
-- ✅ A fill goes only into frames on the login's exact origin, never into an embedded frame from another site, and only into fields you could see: not transparent, off-screen, tiny or covered by something else. (An empty box that is see-through only because the page draws its label inside it, as many modern sign-in forms do, counts as visible.)
+- ✅ A fill goes only into frames on the login's exact origin, never into an embedded frame from another site, and only into fields you could see: not transparent, off-screen, tiny or covered by something else. (An empty box that is see-through only because the page draws its label inside it, as many modern sign-in forms do, counts as visible. Boxes inside a web component are checked the same way.)
 - ✅ The extension is locked down against other extensions and web pages: nothing is exposed to them, they cannot send it messages, and its own pages run under a strict security policy.
 - ✅ Locking the vault reloads the manager and closes the pop-up, so text they had decrypted does not stay in memory. (If a dialog is open, this waits until you close it, so nothing you were typing is lost.)
 - ⚠️ When you fill a login, the page's own scripts **and any other browser extension that can access that page** can read the values from the form, as with any autofill. That is why fills only happen on an exact-origin match over HTTPS and only when you ask.
