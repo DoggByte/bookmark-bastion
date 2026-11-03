@@ -4,6 +4,13 @@ What changed in **Bookmark Bastion**, version by version, from the point of view
 
 ## [Unreleased]
 
+## [1.53.4] - 2026-11-03
+
+### Fixed
+
+- **Fill login** fills the User ID on the KeyBank sign-in page, and on other pages that build their username box the same way. Before, only the password was filled.
+- **Fill login** works again on sign-in pages that contain icons drawn as SVG, such as the Fidelity sign-in page, where it wrongly said "No login form found".
+
 ## [1.53.3] - 2026-11-01
 
 ### Fixed
